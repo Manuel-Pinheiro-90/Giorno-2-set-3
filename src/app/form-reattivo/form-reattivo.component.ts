@@ -30,19 +30,21 @@ user:this.fb.control(null,Validators.required),
 }
 invia(){console.log("stai ricevendo roba",this.form.value)}
 
-
-
-
-
-
-
-
 valido(fieldName:string){
   const field = this.form.get(fieldName);
   return field?.invalid && field?.touched
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
