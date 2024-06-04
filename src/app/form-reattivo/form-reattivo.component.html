@@ -43,6 +43,9 @@
           <span *ngIf="valido('confirmPassword')"
             >Devi confermare la password</span
           >
+          <span *ngIf="form.errors?.['invalidMatch']"
+            >Le password non coincidono</span
+          >
         </div>
 
         <div class="form-group">
@@ -73,3 +76,5 @@
     </div>
   </div>
 </div>
+
+{{ form.value | json }}

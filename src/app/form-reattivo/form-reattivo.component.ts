@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, RequiredValidator, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, RequiredValidator, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-reattivo',
@@ -21,13 +21,26 @@ confirmPassword:this.fb.control(null, Validators.required,),
 genere:this.fb.control(null,Validators.required),
 img:this.fb.control(null,Validators.required),
 user:this.fb.control(null,Validators.required),
-})
-
-
+}, { validators: this.matchpass() });
 
 
 
 }
+
+
+matchpass(): ValidatorFn {
+  return (form: AbstractControl): ValidationErrors | null => {
+    const password = form.get('password');
+    const confirmPassword = form.get('confirmPassword');
+    return (password && confirmPassword && password.value === confirmPassword.value) ? null : { invalidMatch: true };
+  };
+}
+
+
+
+
+
+
 invia(){console.log("stai ricevendo roba",this.form.value)}
 
 valido(fieldName:string){
