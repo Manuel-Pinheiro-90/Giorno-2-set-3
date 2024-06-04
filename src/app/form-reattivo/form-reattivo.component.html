@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="form">
+        <div class="form-group">
+          <h3>Nome</h3>
+          <input
+            type="text"
+            formControlName="nome"
+            class="form-control"
+            placeholder="Il tuo nome"
+          />
+          <span *ngIf="valido('nome')">Devi il nome da guerriero</span>
+        </div>
+        <div class="form-group">
+          <h3>Cognom</h3>
+          <input
+            type="text"
+            formControlName="cognome"
+            class="form-control"
+            placeholder="cognome"
+          />
+          <span *ngIf="valido('cognome')">Devi inserire il cognome</span>
+        </div>
+        <div class="form-group">
+          <h3>Password</h3>
+          <input
+            type="password"
+            formControlName="password"
+            #password
+            class="form-control"
+            placeholder="metti la tua pass"
+          />
+          <span *ngIf="valido('password')">Devi inserire la password</span>
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            formControlName="confirmPassword"
+            class="form-control"
+            placeholder="conferma la tua pass"
+          />
+          <span *ngIf="valido('confirmPassword')"
+            >Devi confermare la password</span
+          >
+        </div>
+
+        <div class="form-group">
+          <h3>Genere</h3>
+          <select formControlName="genere" class="form-control">
+            <option value="uomo">uomo</option>
+            <option value="donna">donna</option>
+            <option value="robot">robot</option>
+            <option value="alieno">alieno</option>
+          </select>
+          <span *ngIf="valido('genere')">Devi confermare il tuo essere</span>
+        </div>
+        <h3>Immgaine</h3>
+        <input type="" />
+
+        <button (click)="invia()" class="btn btn-success">Invia Form</button>
+      </form>
+    </div>
+  </div>
+</div>
