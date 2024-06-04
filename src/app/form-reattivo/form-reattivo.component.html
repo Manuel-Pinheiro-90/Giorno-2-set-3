@@ -56,7 +56,17 @@
           <span *ngIf="valido('genere')">Devi confermare il tuo essere</span>
         </div>
         <h3>Immgaine</h3>
-        <input type="" />
+        <input type="file" formControlName="img" class="form-control" />
+        <span *ngIf="valido('img')">dammi le tue fottute foto</span>
+
+        <h3>User name</h3>
+        <input
+          type="text"
+          formControlName="user"
+          class="form-control"
+          placeholder="user name"
+        />
+        <span *ngIf="valido('user')">Devi il nome da guerriero</span>
 
         <button (click)="invia()" class="btn btn-success">Invia Form</button>
       </form>

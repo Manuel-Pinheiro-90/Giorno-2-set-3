@@ -18,9 +18,9 @@ nome:this.fb.control(null,[Validators.required]),
 cognome:this.fb.control(null,[Validators.required]),
 password:this.fb.control(null,Validators.required),
 confirmPassword:this.fb.control(null, Validators.required,),
-genere:this.fb.control(null,Validators.required)
-
-
+genere:this.fb.control(null,Validators.required),
+img:this.fb.control(null,Validators.required),
+user:this.fb.control(null,Validators.required),
 })
 
 
